@@ -227,3 +227,8 @@ def test_key_store_can_be_iterated_over(obj_key_store: KeyStore, dict_key_store:
     dict_values = [EXAMPLE_DICT_1, EXAMPLE_DICT_2, EXAMPLE_DICT_3]
     for n, item in enumerate(dict_key_store):
         assert item == dict_values[n]
+
+
+def test_you_can_find_len_of_items_in_key_store(obj_key_store: KeyStore, dict_key_store: KeyStore) -> None:
+    assert len(obj_key_store) == 3
+    assert len(dict_key_store) == 3
