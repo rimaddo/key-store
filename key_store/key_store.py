@@ -90,3 +90,6 @@ class KeyStore(Generic[T]):
 
     def __getitem__(self, key: int) -> T:
         return self.objects[key]
+
+    def __len__(self) -> int:
+        return len(self.objects)

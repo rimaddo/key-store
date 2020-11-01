@@ -4,7 +4,7 @@ from typing import List, Type
 import pytest
 
 from key_store.helpers import T, get_keys
-from key_store.tests.conftest import EXAMPLE_DICT_1, EXAMPLE_OBJ_1
+from key_store.tests.conftest import EXAMPLE_DICT_1, EXAMPLE_OBJ_1, ExampleObj
 
 
 class ClassicClass(object):
@@ -22,6 +22,7 @@ NamedTuple = namedtuple('NamedTuple', 'name, value')
     [
         (EXAMPLE_OBJ_1, ("name", "date", "value", "repeat_value", "missing_key_value")),
         (EXAMPLE_DICT_1, ("name", "date", "value", "repeat_value")),
+        (ExampleObj, ("name", "date", "value", "repeat_value", "missing_key_value")),
     ]
 )
 def test_get_keys__success(obj: Type[T], expected_output: List[str]) -> None:
