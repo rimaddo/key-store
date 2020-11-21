@@ -1,6 +1,5 @@
 from collections import defaultdict
 from dataclasses import dataclass, field
-from pprint import pprint
 from typing import Any, Dict, Generic, List, Set, Tuple, TypeVar, Union
 
 T = TypeVar('T')
@@ -33,8 +32,6 @@ class KeyStore(Generic[T]):
         if len(values) == 0:
             return None
         elif len(values) > 1:
-            print("\n\n\n**** CACHE: ")
-            pprint(self._cache)
             raise RuntimeError(f"Expected one or no items matching {kwargs} got {len(values)}")
         return values[0]
 
